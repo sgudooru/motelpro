@@ -1,0 +1,29 @@
+<h1>Listing checkins</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Room</th>
+    <th>Check in</th>
+    <th>Check out</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @checkins.each do |checkin| %>
+      <tr>
+        <td><%= checkin.customer_id %></td>
+        <td><%= checkin.room_id %></td>
+        <td><%= checkin.check_in %></td>
+        <td><%= checkin.check_out %></td>
+        <td><%= checkin.no_of_hrs %></td>
+        <td><%= checkin.amount_charged %></td>
+        <td><%= link_to 'Edit', edit_checkin_path(checkin) %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= button_to 'New Checkin', new_checkin_path ,:class=>'button'%>

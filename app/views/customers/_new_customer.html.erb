@@ -1,0 +1,7 @@
+<% content_for :button_list do %>
+    <div class="right-container">
+      <%= button_to 'New customer', clear_customer_url, :remote => :true, :class => "green button" %>
+    </div>
+<% end %>
+<% if @current_user.admin? -%>
+<%end%>

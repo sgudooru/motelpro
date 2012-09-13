@@ -1,0 +1,27 @@
+<div id="active-listing">
+  <table id="customerstable" class="listing" cellspacing="0">
+    <thead>
+    <tr class="header">
+
+      <th>Name</th>
+
+      <th>full address</th>
+      <th>contact no</th>
+      <td>   </td>
+      <td>   </td>
+      <th>state id</th>
+
+      <th>d/l</th>
+      <th>emergency</th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+    </tr>
+    </thead>
+    <% @customers.each do |customer| %>
+        <%= render :partial => 'customers/customer', :locals => {:customer => customer} %>
+    <% end %>
+  </table>
+
+</div>

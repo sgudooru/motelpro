@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <meta name="description" content="MotelPro"/>
+  <title>'MotelPro'</title>
+  <%= stylesheet_link_tag 'screen', :media => "screen, projection" %>
+  <%= stylesheet_link_tag 'print', :media => "print" %>
+
+</head>
+
+<body>
+<div id="content">
+
+  <div id="header">
+    <div id="inner-header">
+      <h1><%= t 'MotelPro' -%></h1>
+    </div>
+  </div>
+
+  <div id="shadow"></div>
+
+  <div id="main">
+    <%= yield -%>
+  </div>
+
+
+  <br/><br/></div>
+
+
+<div id="footer">
+  <p><%= t 'powered_by' -%>&nbsp;<strong>MotelPro</strong></p>
+</div>
+
+</body>
+</html>

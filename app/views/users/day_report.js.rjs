@@ -1,0 +1,2 @@
+page.replace_html 'right-column', render(:partial => 'report', :locals => { :user => @user })
+

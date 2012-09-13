@@ -1,0 +1,2 @@
+page.replace_html 'right-column', render(:partial => 'new', :locals => { :customer=> @customer})
+page.replace_html 'customer_error_details', ""

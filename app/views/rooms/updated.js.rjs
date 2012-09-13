@@ -1,0 +1,4 @@
+page.replace "room_#{@room.id}", render(:partial => 'room', :locals => {:room => @room})
+
+page.visual_effect :highlight, "room_#{@room.id}"
+page.replace_html 'room_error_details', ""

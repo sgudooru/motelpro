@@ -1,0 +1,64 @@
+<h5>New customer</h5>
+<br/>
+<%= form_for(@customer, :remote => true) do |f| %>
+    <DIV id="customer_error_details"></DIV>
+    <span class="field">
+          <div class="field">
+
+            <%= f.text_field :title, :placeholder => 'title' %>
+          </div>
+          <div class="field">
+
+            <%= f.text_field :first_name, :placeholder => 'first name' %>
+          </div>
+          <div class="field">
+
+            <%= f.text_field :last_name, :placeholder => 'last name' %>
+          </div>
+          <div class="field">
+
+            <%= f.text_field :address, :placeholder => 'address' %>
+          </div>
+      <div class="field">
+
+        <%= f.text_field :city, :placeholder => 'city' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :state, :placeholder => 'state' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :zip_code, :placeholder => 'zip code' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :contact_no, :placeholder => 'contact no' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :state_id_card, :placeholder => 'state id number' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :driving_license, :placeholder => 'driving license number' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :emergency_contact_name, :placeholder => 'emergency contact name' %>
+
+      </div>
+      <div class="field">
+
+        <%= f.text_field :emergency_contact_no, :placeholder => 'emergency contact no' %>
+
+      </div>
+            </span>
+    <span class="actions">
+      <%= f.submit :class=>'button' %>
+  </span>
+<% end %>
+
+
+
+

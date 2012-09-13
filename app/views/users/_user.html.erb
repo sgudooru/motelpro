@@ -1,0 +1,19 @@
+<tr id='user_<%= user.id %>' class="<%= cycle("list-line-odd", "list-line-even", :name => "active") %>">
+  <td><%= user.username %></td>
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.contactno %></td>
+  <td><%= user.email %></td>
+  <td><%= button_to 'report', user_report_path(:id=>user.id,:date=>Time.now), :remote=>true, :class=>'button' %></td>
+  <td><%= button_to 'edit', update_user_path(user), :remote=>true, :class=>'button' %></td>
+  <% if !user.admin? -%>
+      <% if @current_user.admin? -%>
+
+          <td><%= button_to 'destroy', users_destroy_path(user), :confirm=>"Are you sure?", :class=>'button' -%></td>
+      <% end -%>
+  <% else -%>
+      <td>default</td>
+  <% end -%>
+</tr>
+
+

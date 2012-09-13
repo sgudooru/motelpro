@@ -1,0 +1,28 @@
+<% form_tag customer_search_url, :remote=>true, :controller => 'checkins', :action => 'search' do %>
+    <input name="search"/>
+    <input type="submit" value="Search" class='button' />
+<% end %>
+<div id="active-listing">
+  <table class="listing" cellspacing="0" >
+    <thead>
+    <tr class="header">
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Contact no</th>
+      <th>State Id</th>
+      <th>D/L No</th>
+
+      <th></th>
+
+
+    </tr>
+    </thead>
+    <tbody id='customerslisttable'>
+
+          <%= render :partial => 'customers' %>
+
+    </tbody>
+  </table>
+</div>
+<br/>
+

@@ -1,0 +1,31 @@
+<tr class="<%= cycle("list-line-odd", "list-line-even", :name => "active") %>" id="room_<%= i.id %>">
+
+  <td><%= link_to i.number, db_show_room_path(i), {:remote=>true, :title => "Room ##{i.id}: #{i.status.name}", :class => "custom"}, :remote=>true -%></td>
+
+
+  <% if (i.status.name.to_s.downcase.eql?('ready')) %>
+      <td><%= link_to i.status.name, edit_room_path(i) -%></td>
+  <% else %>
+      <td><%= link_to i.status.name, edit_room_path(i) -%></td>
+  <% end %>
+
+  <% if (!i.current_checkin.nil? && i.status.name.to_s.downcase.eql?('occupied')) %>
+      <td><%= link_to "#{i.current_checkin.customer.first_name} #{i.current_checkin.customer.last_name}", i.current_checkin.customer -%></td>
+      <td><%= i.current_checkin.check_in.strftime(" %m/%d/%Y %I:%M%p") -%></td>
+      <td><%= i.current_checkin.check_out.strftime(" %m/%d/%Y %I:%M%p") -%></td>
+      <td><%= i.current_checkin.no_of_hrs -%></td>
+  <% else %>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  <% end %>
+
+  <% if (i.status.name.to_s.downcase.eql?('ready')) %>
+      <td><%= link_to "Checkin", select_path(:room_id=>i.id) %></td>
+  <% elsif (i.status.name.to_s.downcase.eql?('occupied') && !i.current_checkin.nil?) %>
+      <td><%= link_to "Checkout", checkout_path(:id=>i.current_checkin) %></td>
+  <% else %>
+      <td></td>
+  <% end %>
+</tr>

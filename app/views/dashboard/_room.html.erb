@@ -1,0 +1,18 @@
+<h5>Change room status</h5>
+<br/>
+<%= form_for(@room, :remote => true) do |f| %>
+    <DIV id="room_error_details"></DIV>
+    <span class="field">
+              <p>
+                <%= @room.number %>     <br/>
+                <%= @room.description %>
+              </p>
+          <div class="field">
+            <%= f.collection_select(:status_id, Status.all, :id, :name) %>
+          </div>
+    </span>
+    <span class="action">
+    <%= f.submit :class=>'button' %>
+    </span>
+
+<% end %>

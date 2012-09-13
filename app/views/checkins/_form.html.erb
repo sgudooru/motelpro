@@ -1,0 +1,68 @@
+<%= form_for(@checkin) do |f| %>
+    <% if @checkin.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@checkin.errors.count, "error") %> prohibited this checkin from being saved:</h2>
+
+          <ul>
+            <% @checkin.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <br/>
+    <h3>
+      Customer : <%= @checkin.customer.full_name %>
+    </h3>
+    <br/>
+    <h3>
+      Room Number: <%= "#{@checkin.room.number} - #{@checkin.room.description}" %>
+
+    </h3>
+    <br/>
+    <h3>
+      Room price/hr: <%= "#{@checkin.room.charges_per_hr}" %>
+
+    </h3>
+
+    <div class="field">
+
+
+      <%= f.text_field :customer_id, :type=>'hidden' %>
+    </div>
+
+    <div class="field">
+
+      <%= f.text_field :room_id, :type=>'hidden' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :check_in %>
+      <br/>
+      <%= f.datetime_select :check_in %>
+    </div>
+    <div class="field">
+      <%= f.label :no_of_hrs %>
+      <br/>
+      <%= f.text_field :no_of_hrs %>
+    </div>
+    <div class="field">
+      <%= f.label :amount_charged %>
+      <br/>
+      <%= f.text_field :amount_charged %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :check_out %>
+      <br/>
+      <%= f.hidden_field :check_out %>
+    </div>
+
+    <%= f.hidden_field :op %>
+
+    <%= f.hidden_field :user_id %>
+    <br/>
+
+    <div class="actions">
+      <%= f.submit :class=>'button' %>
+    </div>
+<% end %>

@@ -1,0 +1,47 @@
+<h5>User Information</h5>
+
+<%= form_for(@user, :remote => true) do |f| %>
+    <DIV id="user_error_details"></DIV>
+    <span class="field">
+      <div class="field">
+
+        <%= f.text_field :username, :placeholder => 'user name' %>
+      </div>
+      <div class="field">
+
+        <%= f.password_field :password, :placeholder => 'password' %>
+      </div>
+      <div class="field">
+
+        <%= f.password_field :password_confirmation, :placeholder => 'confirm password' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :first_name, :placeholder => 'first name' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :last_name, :placeholder => 'last name' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :contactno, :placeholder => 'contact no#' %>
+      </div>
+      <div class="field">
+
+        <%= f.text_field :email, :placeholder => 'email' %>
+      </div>
+      <div class="field">
+        <%= f.label :admin %>           &nbsp;
+        <%= f.check_box :admin %>
+      </div>
+      <div class="field">
+        <%= f.label :"active" %>  &nbsp;
+        <%= f.check_box :active %>
+      </div>
+      <br/>
+      <div class="actions">
+        <%= f.submit :class=>'button' %>
+      </div>
+      </span>
+<% end %>

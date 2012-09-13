@@ -1,0 +1,3 @@
+page.insert_html :bottom, 'customerstable', render(:partial => 'customer', :locals => {:customer => @customer})
+page.visual_effect :highlight, "customer_#{@customer.id}"
+page.replace_html 'customer_error_details', ""

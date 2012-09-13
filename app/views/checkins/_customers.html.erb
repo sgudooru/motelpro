@@ -1,0 +1,12 @@
+<% @customers.each do |customer| %>
+    <tr>
+    <tr id='room_<%= customer.id %>' class="<%= cycle("list-line-odd", "list-line-even", :name => "active") %>">
+      <td><%= customer.first_name %></td>
+      <td><%= customer.last_name %></td>
+      <td><%= customer.contact_no %></td>
+      <td><%= customer.state_id_card %></td>
+      <td><%= customer.driving_license %></td>
+
+      <td><%= button_to "Select", checkin_path(:room_id=>params[:room_id], :customer_id=>customer.id),:class=>"button" %></td>
+    </tr>
+<% end %>

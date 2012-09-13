@@ -1,0 +1,3 @@
+page.replace_html 'right-column', render(:partial => 'new', :locals => { :user=> @user})
+page.visual_effect :highlight, "user_#{@user.id}"
+page.replace_html 'user_error_details', ""

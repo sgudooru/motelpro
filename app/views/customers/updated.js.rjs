@@ -1,0 +1,4 @@
+page.replace "customer_#{@customer.id}", render(:partial => 'customer', :locals => {:customer => @customer})
+
+page.visual_effect :highlight, "customer_#{@customer.id}"
+page.replace_html 'customer_error_details', ""

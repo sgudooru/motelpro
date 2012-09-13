@@ -1,0 +1,28 @@
+
+<h2>Dashboard</h2>
+
+<h4 id="notice"><%= notice %></h4>
+
+<div id="active-listing">
+  <table class="listing" cellspacing="0">
+    <thead>
+    <tr class="header">
+      <th>Room#</th>
+      <th>Status</th>
+      <th>Customer</th>
+      <th>In time</th>
+      <th>Out time</th>
+      <th>Hrs</th>
+      <th></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <% @active_rooms.each do |i| %>
+        <%= render :partial => 'dashboard/activeroom', :locals => {:i => i} %>
+
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

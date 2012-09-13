@@ -1,0 +1,17 @@
+<div id="login-content">
+  <h1><%="login" -%></h1>
+
+  <div class="box">
+    <%= flash[:message] -%>
+    <% form_for @user_session, :url => user_session_path do |f| -%>
+      <dl>
+        <dt><label for="user_session_username"><%=t 'username' -%></label></dt>
+        <dd><%= f.text_field :username, :size => 20, :class => "textfield" -%></dd>
+        <dt><label for="user_session_password"><%=t 'password' -%></label></dt>
+        <dd><%= f.password_field :password, :size => 20, :class => "textfield" -%></dd>
+
+        <dd><%= f.submit 'login', :class => "button" -%></dd>
+      </dl>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<tr id='customer_<%= customer.id %>' class="<%= cycle("list-line-odd", "list-line-even", :name => "active") %>">
+  <td><%= customer.full_name %></td>
+  <td><%= customer.full_address %></td>
+  <td><%= customer.contact_no %></td>
+  <td> </td>
+  <td>   </td>
+  <td><%= customer.state_id_card %></td>
+  <td><%= customer.driving_license %></td>
+  <td><%= customer.emergency_contact %></td>
+
+  <td>  <%= button_to 'edit', update_cust_path(customer), :remote => :true, :class => "button" %>
+  <td>
+
+  <% if @current_user.admin? -%>
+      <td><%= button_to 'destroy', customers_destroy_path(customer), :confirm=>"Are you sure?" ,:class => "button" -%></td>
+  <% end -%>
+</tr>
+
+

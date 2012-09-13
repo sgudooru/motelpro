@@ -1,0 +1,1 @@
+page.replace_html 'right-column', render(:partial => 'rooms/show', :locals => { :room=> @room })

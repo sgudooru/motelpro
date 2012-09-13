@@ -1,0 +1,26 @@
+<div id="assigned-to-listing">
+  <table class="listing" cellspacing="0">
+    <thead>
+    <tr class="header">
+
+      <th>In</th>
+      <th>Out</th>
+      <th>Hrs</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <% @user.user_logs.each do |log| -%>
+        <tr class="<%= cycle("list-line-odd", "list-line-even") -%>">
+
+          <td><%= nice_date log.login_time unless log.login_time.nil? -%></td>
+          <td><%= nice_date log.logout_time unless log.logout_time.nil? -%></td>
+          <td><%= (log.logout_time - log.login_time)/(60*60) if (!(log.logout_time.nil?) && !(log.login_time.nil?)) -%></td>
+
+        </tr>
+    <% end -%>
+
+    </tr>
+    </tbody>
+  </table>
+</div>

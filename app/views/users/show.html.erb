@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h3> <%= @user.username %>(
+
+<%= @user.first_name %>
+<%= @user.last_name %>)
+</h3>
+
+<%= button_to 'my report', user_report_path(:id=>@user.id,:date=>Time.now), :remote=>true, :class=>'button' %>
+<br/>
+<h2>My log history</h2>
+<%= render 'logs' %>
+
+
+
+
+
+
+
+
+

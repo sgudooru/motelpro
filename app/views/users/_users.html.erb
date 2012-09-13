@@ -1,0 +1,22 @@
+<div id="active-listing">
+  <table id="userstable" class="listing" cellspacing="0">
+    <thead>
+    <tr class="header">
+      <th>user name</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>contact no</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <% @users.each do |user| %>
+        <%= render :partial => 'users/user', :locals => {:user => user} %>
+
+    <% end %>
+
+  </table>
+
+</div>

@@ -1,0 +1,1 @@
+page.replace_html 'user_error_details', render(:partial => 'user_error', :locals => {:user => @user})

@@ -1,0 +1,24 @@
+<div id="active-listing">
+  <table  id="roomstable" class="listing" cellspacing="0">
+    <thead>
+    <tr class="header">
+      <th>Number</th>
+      <th>Description</th>
+      <th>Charges per hr</th>
+      <th>Key no</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+  <% @rooms.each do |room| %>
+      <%= render :partial => 'rooms/room', :locals => {:room => room} %>
+  <% end %>
+    </tbody>
+
+  </table>
+
+</div>

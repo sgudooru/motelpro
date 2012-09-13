@@ -1,0 +1,2 @@
+page.replace_html 'right-column', render(:partial => 'room', :locals => { :room=> @room})
+page.visual_effect :highlight, "room_#{@room.id}"

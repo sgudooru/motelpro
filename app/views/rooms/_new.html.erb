@@ -1,0 +1,27 @@
+<h5>New room</h5>
+<br/>
+<%= form_for(@room, :remote => true) do |f| %>
+    <DIV id="room_error_details"></DIV>
+    <span class="field">
+          <div class="field">
+            <%= f.text_field :number, :placeholder => 'room number here' %>
+          </div>
+          <div class="field">
+            <%= f.text_field :description, :placeholder => 'room description' %>
+          </div>
+          <div class="field">
+            <%= f.text_field :charges_per_hr, :placeholder => 'charges/hr must be money (#.##)' %>
+          </div>
+          <div class="field">
+            <%= f.text_field :key_no, :placeholder => 'optional key no' %>
+          </div>
+
+          <div class="field">
+            <%= f.collection_select(:status_id, Status.all, :id, :name) %>
+          </div>
+    </span>
+    <span class="action">
+    <%= f.submit :class=>'button' %>
+    </span>
+
+<% end %>

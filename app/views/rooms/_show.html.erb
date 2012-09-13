@@ -1,0 +1,23 @@
+<div id="active-listing">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <b>Number:</b>
+    <%= @room.number %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @room.description %>
+  </p>
+  <p>
+    <b>Charges per hr:</b>
+    <%= @room.charges_per_hr %>
+  </p>
+  <p>
+    <b>Key no:</b>
+    <%= @room.key_no %>
+  </p>
+  <p>
+    <b>Status:</b>
+    <%= @room.status.name %>
+  </p>
+</div>
